@@ -508,7 +508,7 @@ class DeBeerCalculation(object):
                                           showlegend=True, mode='lines', name=r'$ q_{b,%.1fm} $' % self.diameter_2)
             self.base_plot.append_trace(trace_diameter_2, 1, 1)
         if selected_depth is not None:
-            qb_selected = np.interp(selected_depth, self.depth, self.qb)
+            qb_selected = np.interp(selected_depth, self.depth_qb, self.qb)
             traceqb_selected = go.Scatter(
                 x=[qb_selected, ], y=[selected_depth, ], showlegend=False, mode='markers',
                 marker=dict(size=10, color='red', line=dict(width=2, color='black')))
