@@ -307,7 +307,7 @@ class DeBeerCalculation(object):
             self.diameter_2 = self.diameter_pile
         else:
             self.diameter_1 = np.round(self.diameter_pile - (self.diameter_pile % 0.2), 1)
-            self.diameter_2 = np.round(self.diameter_pile + (self.diameter_pile % 0.2), 1)
+            self.diameter_2 = self.diameter_1 + 0.2
         self.calc_1 = self.calculate_base_resistance_standard_diameter(
             pile_diameter=self.diameter_1, vanimpecorrection=vanimpecorrection, hcrit=hcrit
         )
